@@ -28,7 +28,7 @@ bool solve(int pos,int sum,int price){
 string LotteryTicket::buy(int price , int b1, int b2, int b3, int b4){
 	//freopen("in.txt","r",stdin);
 	//freopen("out.txt","w",stdout);
-	
+
 	bills[0] = b1;
 	bills[1] = b2;
 	bills[2] = b3;
@@ -40,16 +40,16 @@ string LotteryTicket::buy(int price , int b1, int b2, int b3, int b4){
 	}else{
 		return "IMPOSSIBLE";
 	}
-	
-	
+
+
 }
 
-/*
+
 int main(){
 	LotteryTicket *lt;
 	string res = lt->buy(1000, 999, 998, 997, 996);
 	cout << res;
-}*/
+}
 
 
 
