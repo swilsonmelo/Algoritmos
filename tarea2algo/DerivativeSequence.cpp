@@ -20,7 +20,7 @@ vector<int> DerivativeSequence::derSeq(vector<int> a, int n){
 
 
 }
-/*
+
 int main(){
     DerivativeSequence *dt;
     vector<int> vec;
@@ -34,6 +34,6 @@ int main(){
         printf("%d ",res[i]);
     }
     return 0;
-}*/
+}
 
 
