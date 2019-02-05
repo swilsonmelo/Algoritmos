@@ -13,26 +13,35 @@ int cmp (int a, int b){
 class Haar1D{
 public :
     vector <int> transform(vector <int> data, int l){
-        vector<int> res;
-        for(int i = 0; i < data.size(); i += 2){
-            res.push_back(data[i]+data[i+1]);
-        }
+        vector<int> seq;
+        int limit = data.size();
+        for(int i=0;i<l;i++){
+            seq.clear();
+            for(int j=0;j<limit;j+=2){
+              seq.push_back(data[j]+data[j+1]);
 
-        for(int i = 0; i < data.size(); i += 2){
-            res.push_back(data[i]-data[i+1]);
+            }
+            for(int j=0;j<limit;j+=2){
+              seq.push_back(data[j]-data[j+1]);
+
+            }
+            for(int j=limit;j<data.size();j++){
+              seq.push_back(data[j]);
+
+            }
+
+            data=seq;
+            limit/=2;
         }
-        l--;
-        if(l == 0){
-            for(int i = 0; i < res.size(); i++) printf("%d ",res[i]);
-            puts("");
-            return res;
-        }else{
-            return transform(res,l);
-        }
+        /*
+        for(int i = 0; i < seq.size(); i++) printf("%d ",seq[i]);
+        puts("");*/
+        return seq;
+
     }
 
 };
-
+/*
 int main(){
     vector<int> res;
     int myVec[] = {1, 2, 3, 5};
@@ -41,5 +50,4 @@ int main(){
     vector<int> res1 = ha->transform(res,1);
     vector<int> res2 = ha->transform(res,2);
     return 0;
-
-}
+}*/
