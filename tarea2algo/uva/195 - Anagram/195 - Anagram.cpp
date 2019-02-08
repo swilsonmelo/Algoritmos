@@ -22,7 +22,7 @@ void recu(int pos){
         for(int i = 1; i < len; i++) printf("%c",now[i]);
         puts("");
         now[pos] = '\0';
-        //puts(now);*/
+        //puts(now);
     }
     else
     {
