@@ -1,0 +1,5 @@
+60 tiene 4 factores primos
+60 tiene 3 factores primos diferentes
+La suma de los factores primos de 60 es 12
+60 tiene 12 divisores
+La suma de los divisores de 60 es 168
