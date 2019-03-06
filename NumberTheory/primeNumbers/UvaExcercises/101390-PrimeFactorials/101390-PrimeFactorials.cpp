@@ -26,30 +26,53 @@ void seive(){
 }
 
 int solve(ll n, ll m){
-    vll pFm;
-    map<ll,ll> pfMPower;
+    //vll pFm;
+    //map<ll,ll> pfMPower;
     ll pfIdx = 0, pf = primes[pfIdx];
     while( pf * pf <= m){
         ll power = 0;
+        /*
         if( m % pf == 0 ){
             pFm.push_back(pf);
-        }
+        }*/
         while( m % pf == 0){
             power++;
             m /= pf;
         }
-        if( power )pfMPower[pf] = power;
+        if( power ){
+            //pfMPower[pf] = power;
+            ll power2 = 0;
+            for(ll j = pf; j <= n; j *= pf){
+            //if( n % j == 0)power += n/j;
+                power2 += n/j;
+
+            }
+            if( power > power2){
+                return 0;
+            }
+
+        }
         pfIdx++;
         pf = primes[pfIdx];
     }
     if( m != 1 ) {
-        pFm.push_back(m);
-        pfMPower[m] = 1;
+        //pFm.push_back(m);
+        //pfMPower[m] = 1;
+        ll power2 = 0;
+        /*
+        for(ll j = m; j <= n; j *= m){
+            power2 += n/j;
+        }*/
+        if( 1 > n/m){
+            return 0;
+        }
     }
+    return 1;
     /*
     for(int i = 0; i < pFm.size(); i++) printf("%d : %d  ",pFm[i],pfMPower[pFm[i]]);
     puts("");
     */
+    /*
     int res = 1;
     for(int i = 0; i < pFm.size(); i++){
         ll pf = pFm[i];
@@ -66,7 +89,7 @@ int solve(ll n, ll m){
             break;
         }
     }
-    return res;
+    return res;*/
 
 
 }
