@@ -10,6 +10,11 @@ typedef vector<int> vi;
 int isPrime[Maxi];
 vi primes;
 
+/**
+* 2*primes[0]*primes[1]*7*11*.....*primes[k] = k^2
+*/
+
+
 void seive(){
     for(int i = 0; i < Maxi; i++ )isPrime[i] = 1;
     isPrime[0] = isPrime[1] = 0;
@@ -116,6 +121,25 @@ ll sumDiv(ll N){
     return ans;
 }
 
+/**
+*Count the first x coprimes of N where x < N
+*/
+ll EulerPhi(ll N){
+    ll pfIdx = 0, pf = primes[pfIdx], ans = N;
+    while( pf * pf <= N ){
+        if( N % pf == 0 ){
+            ans -= ans/pf;
+        }
+        while( N % pf == 0 ){
+            N /= pf;
+        }
+        pfIdx++;
+        pf = primes[pfIdx];
+    }
+    if( N != 1 ) ans -= ans/pf;
+    return ans;
+}
+
 
 int main(){
     seive();
@@ -134,5 +158,7 @@ int main(){
     printf("%lld tiene %lld divisores\n",N,res);
     res = sumDiv(N);
     printf("La suma de los divisores de %lld es %lld\n",N,res);
+    res = EulerPhi(N);
+    printf("%lld tiene %lld coprimos menores que el\n",N,res);
     return 0;
 }
