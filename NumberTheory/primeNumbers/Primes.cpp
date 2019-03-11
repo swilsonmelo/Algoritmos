@@ -10,9 +10,6 @@ typedef vector<int> vi;
 int isPrime[Maxi];
 vi primes;
 
-/**
-* 2*primes[0]*primes[1]*7*11*.....*primes[k] = k^2
-*/
 
 
 void seive(){
