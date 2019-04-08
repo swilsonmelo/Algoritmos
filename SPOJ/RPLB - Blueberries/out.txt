@@ -1,2 +1,0 @@
-Scenario #1: 90
-Scenario #2: 65
