@@ -70,7 +70,7 @@ int main(){
                     potencia += 1;
                     ans = matMult(ans,base);
                 }
-            }else{            
+            }else{              
                 potencia += m[i];                                        
             }
             
